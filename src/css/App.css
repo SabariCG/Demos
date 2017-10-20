@@ -1,0 +1,165 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.header {
+  height: 47px;
+  background-color: #071D3E;
+  color: white;
+}
+
+.header h2 {
+  margin: 0 0 0 0;
+  padding-top: 9px;
+  padding-left: 40px;
+}
+
+.header1 {
+  height: 70px;
+  background-color: #F4F6F9;
+}
+
+.noborderbutton {
+  display: block;
+  color: #071D3E;
+  border-color: White;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  width: 60px;
+  border-radius: 5px 5px 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+.button {
+  display: inline-block;
+  float: right;
+  color: #32A2E8;
+  background-color: White;
+  border-color: gainsboro;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  width: 60px;
+  border-radius: 5px 5px 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+.buttonLeft {
+  color: #32A2E8;
+  background-color: White;
+  border-color: gainsboro;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  width: 60px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+.buttonCenter {
+  color: #32A2E8;
+  background-color: White;
+  border-color: gainsboro;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+.buttonRight {
+  color: #32A2E8;
+  background-color: White;
+  border-color: gainsboro;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  width: 60px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+.buttons {
+  display: inline-flex;
+  float: right;
+  height: 55px;
+  padding-right: 25px;
+  padding-top: 23px;
+  font-size: 14px;
+}
+
+.leftAccordion {
+  display: inline-block;
+  border-right-style: solid;
+  border-right-color: #F4F6F9;
+  height: 100%;
+  width: 250px;
+}
+
+.filterHeaderDiv {
+  display: flex;
+  margin-top: 15px;
+  height: 30px;
+}
+
+.filterHeaderDiv p {
+  margin-top: 5px;
+  margin-left: 12px;
+}
+
+.filterButtons {
+  display: flex;
+  margin-right: 12px;
+  margin-left: auto;
+}
+
+.filterChilds {
+  margin-left: 22px;
+}
+
+.form-control {
+  width: 90%;
+}
+
+.calendarSpan {
+  top: -24px;
+  float: right;
+  margin-right: 30px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.filterSplits {
+  margin-top: 10px;
+}

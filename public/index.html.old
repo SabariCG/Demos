@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/salesforce-lightning-design-system.css">-->
+
+    <title>BugBin - Automation console</title>
+  </head>
+  <!--<body>
+
+  <div class="slds-scope">
+    <p class="slds-text-heading--label slds-m-bottom--small">
+      Salesforce Lightning Design System Trailhead Module
+    </p>
+
+    <div class="slds-grid">
+  <div class="slds-col">
+    <div class="slds-box slds-box--small slds-theme--shade slds-text-align--center">col</div>
+  </div>
+  <div class="slds-col">
+    <div class="slds-box slds-box--small slds-theme--shade slds-text-align--center">col</div>
+  </div>
+</div>
+
+    <div class="myapp">
+      <section aria-labelledby="badges">
+        <h2 id="badges" class="slds-text-heading--large slds-m-vertical--large">Badges</h2>
+        <div>
+          <span class="slds-badge">Badge</span>
+          <span class="slds-badge slds-theme--inverse">Badge</span>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</body>-->
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
