@@ -1,0 +1,1 @@
+{"version":3,"sources":["../server/app.js"],"names":["app"],"mappings":";;;;;;AAAA;;;;;;AAEA,IAAMA,MAAM,wBAAZ;;kBAEeA,G","file":"app.js","sourcesContent":["import express from 'express';\n\nconst app = express();\n\nexport default app;\n"]}
