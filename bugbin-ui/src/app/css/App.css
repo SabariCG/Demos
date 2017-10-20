@@ -1,0 +1,155 @@
+.header {
+  height: 47px;
+  background-color: #071D3E;
+  color: white;
+}
+
+.header h1 {
+  margin: 0 0 0 0;
+  padding-top: 4px;
+  padding-left: 40px;
+  font-size: 2em ! important;
+}
+
+.subHeader {
+  height: 80px;
+  background-color: #F4F6F9;
+}
+
+.subHeaderElement {
+  padding-top: 16px;
+}
+
+.button-space-lr {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.leftAccordion {
+  display: inline-block;
+  border-right-style: solid;
+  border-right-color: #F4F6F9;
+  height: 100%;
+  width: 250px;
+}
+
+legend {
+  fill: #16325c ! important;
+	font-weight: 700 ! important;
+}
+
+.filterHeaderDiv {
+  display: flex;
+  margin-top: 15px;
+  height: 30px;
+}
+
+.filterHeaderDiv p {
+  margin-top: 5px;
+  margin-left: 12px;
+  font-size: medium;
+}
+
+.filterButtons {
+  display: flex;
+  margin-right: 12px;
+  margin-left: auto;
+}
+
+.clearButton {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.slds-button-clear {
+    position: relative;
+    display: inline-block;
+    background: 0 0;
+    background-clip: border-box;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-size: .75rem;
+    line-height: 1.875rem;
+    text-decoration: none;
+    color: #0070d2;
+    -webkit-appearance: none;
+    white-space: normal;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: color 50ms linear,background-color 50ms linear;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.filterChilds {
+  margin-left: 22px;
+  margin-top: 12px;
+}
+
+.createdOnDiv {
+  margin-top: 7px;
+}
+
+.slds-icon-text-default {
+  fill: #54698d ! important;
+  right: 36px ! important;
+}
+
+.dataInput {
+  width: 200px;
+}
+
+.dataInputs {
+  padding-bottom: 8px;
+}
+
+.svgEvent {
+  fill: #54698d ! important;
+  right: 0.65rem ! important;
+  top: 40% ! important;
+}
+
+.form-control {
+  width: 90%;
+}
+
+.calendarSpan {
+  top: -24px;
+  float: right;
+  margin-right: 30px;
+}
+
+.filterSplits {
+  margin-top: 10px;
+}
+
+.squaredFour input[type=checkbox] {
+  cursor: pointer;
+	width: 16px;
+	height: 16px;
+  margin-right: 5px;
+}
+
+.squaredFour input[type=checkbox]:after {
+	opacity: 0.2;
+	content: '';
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 6px;
+	left: 7px;
+	border-top: none;
+	border-right: none;
+
+	transform: rotate(-45deg);
+}
+
+.squaredFour input[type=checkbox]:hover::after {
+	opacity: 0.5;
+}
+
+.squaredFour input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}

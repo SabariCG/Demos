@@ -1,0 +1,42 @@
+{
+  "name": "bugbin-ui",
+  "version": "1.0.0",
+  "description": "Bugbin - Interactive application to manage tests",
+  "scripts": {
+    "prepare": "npm install",
+    "start": "webpack-dev-server --config webpack.config.js --inline --hot --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealImage/bugbin-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@salesforce-ux/design-system": "^2.2.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^2.21.0",
+    "style-loader": "^0.13.2",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.14.0"
+  },
+  "bugs": {
+    "url": "https://github.com/RealImage/bugbin-ui/issues"
+  },
+  "homepage": "https://github.com/RealImage/bugbin-ui#readme"
+}
