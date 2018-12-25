@@ -15,10 +15,10 @@ import (
 )
 
 const (
-	DB_INSTANCE = ".\\SQL2008R2INST"
+	DB_INSTANCE = ".\\yourinstancename"
 	DB_USER     = "sa"
-	DB_PASSWORD = "Wy0ming12"
-	DB_NAME     = "MatrixLive20032017"
+	DB_PASSWORD = "yourpassword"
+	DB_NAME     = "yourdbname"
 	OUTPUT_PATH = "D:\\Share\\QC\\JSONs\\Go_Output.json"
 )
 
