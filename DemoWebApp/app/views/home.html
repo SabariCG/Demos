@@ -1,0 +1,11 @@
+﻿<div ng-controller="homeCtrl">
+    <!--<h1>Home Page</h1>-->
+    <div class="split left">
+        <div ng-include="'app/views/search.html'"></div>
+    </div>
+    <div>
+        <div ng-repeat="person in Persons" class="col-md-4">
+            <div person-details></div>
+        </div>
+    </div>
+</div>

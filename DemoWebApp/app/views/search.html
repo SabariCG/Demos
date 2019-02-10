@@ -1,0 +1,51 @@
+﻿<div class="left-things" ng-controller="searchCtrl">
+    <div class="row">
+        <h2>Search</h2>
+    </div>
+    <table>
+        <tr>
+            <td class="left-for-label">
+                <label>Zone</label>
+            </td>
+            <td class="right-for-element">
+                <select class="js-example-data-array" id="zones" ng-options="zone.Id as zone.Name for zone in Zones" ng-model="SelectedZone" ng-change="OnTimeZoneChange()" style="width: 70%">
+                    <option></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-for-label">
+                <label>Country</label>
+            </td>
+            <td class="right-for-element">
+                <select class="js-example-data-array" id="countries" ng-options="country.Id as country.Name for country in Countries" ng-model="SelectedCountry" ng-change="OnCountryChange()" style="width: 70%">
+                    <option></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-for-label">
+                <label>State</label>
+            </td>
+            <td class="right-for-element">
+                <select class="js-example-data-array" id="states" ng-options="state.Id as state.Name for state in States" ng-model="SelectedState" ng-change="OnStateChange()" style="width: 70%">
+                    <option></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-for-label">
+                <label>City</label>
+            </td>
+            <td class="right-for-element">
+                <select class="js-example-data-array" id="cities" ng-options="city.Id as city.Name for city in Cities" ng-model="SelectedCity" ng-change="OnCityChange()" style="width: 70%">
+                    <option></option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <div style="padding-left: 65px; padding-top: 30px">
+        <button type="button" class="btn" ng-click="OnSearch()">Search</button>
+        <button type="button" class="btn btn-default" ng-click="OnReset()">Reset</button>
+    </div>
+</div>
