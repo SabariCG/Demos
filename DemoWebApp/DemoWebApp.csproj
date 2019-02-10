@@ -94,6 +94,7 @@
     <Content Include="app\controllers\indexCtrl.js" />
     <Content Include="app\controllers\searchCtrl.js" />
     <Content Include="app\directives\personDetails.js" />
+    <Content Include="app\services\filtersFactory.js" />
     <Content Include="app\views\about.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\personDetails.html" />
@@ -166,7 +167,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\services\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

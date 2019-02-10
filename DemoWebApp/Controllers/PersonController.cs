@@ -43,10 +43,10 @@ namespace DemoWebApp.Controllers
         }
 
         [Route("api/person/details")]
-        [HttpGet]
-        public IEnumerable<Models.PersonDetail> GetPersonDetails(int timeZone, int country, int state, int city)
+        [HttpPost]
+        public IEnumerable<Models.PersonDetail> GetPersons(Models.PersonDetail personDetail)
         {
-            return personDetailDb.GetPersonDetails(timeZone, country, state, city);
+            return personDetailDb.GetPersonDetails(int.Parse(personDetail.TimeZone), int.Parse(personDetail.Country), int.Parse(personDetail.State), int.Parse(personDetail.City));
         }
     }
 }

@@ -17,10 +17,10 @@ namespace DemoWebApp.DAL
             StringBuilder strBuilder = new StringBuilder();
 
             strBuilder.AppendLine("SELECT DISTINCT p.[Name], p.Gender, p.Age, tz.[Name] AS TimeZone, co.[Name] AS Country, st.[Name] AS [State], ci.[Name] AS City FROM PersonDetails p");
-            strBuilder.AppendLine(" INNER JOIN TimeZones tz ON p.TimeZone = tz.Id");
-            strBuilder.AppendLine(" INNER JOIN Countries co ON co.TimeZone = tz.Id");
-            strBuilder.AppendLine(" INNER JOIN States st ON st.Country = co.Id");
-            strBuilder.AppendLine(" INNER JOIN Cities ci ON ci.[State] = st.Id");
+            strBuilder.AppendLine(" INNER JOIN TimeZones tz ON tz.Id = p.TimeZone");
+            strBuilder.AppendLine(" INNER JOIN Countries co ON co.Id = p.Country");
+            strBuilder.AppendLine(" INNER JOIN States st ON st.Id = p.[State]");
+            strBuilder.AppendLine(" INNER JOIN Cities ci ON ci.Id = p.City");
             strBuilder.AppendLine("WHERE p.TimeZone = " + timeZone + " AND p.Country = " + country + " AND p.[State] = " + state + " AND p.City = " + city);
 
             DataTable personDetailsDt = db.GetDataTable(strBuilder.ToString());

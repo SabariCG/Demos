@@ -1,144 +1,53 @@
-﻿app.controller('searchCtrl', function ($scope, $http) {
+﻿app.controller('searchCtrl', function ($scope, $http, $rootScope, filtersFactory) {
 
-    $http({
-        method: 'GET',
-        url: '/api/person/timezones'
-    }).then(function successCB(data) {
-        console.log('timezones');
-        console.log(data.data);
-        $scope.Zones = data.data;
-    }, function errorCB(data) {
-            console.log('error');
-            console.log(data);
+    var zonesPromise = filtersFactory.GetTimeZones();
+
+    zonesPromise.then(function (data) {
+        $rootScope.RZones = $scope.Zones = data;
     });
 
-    //$scope.Countries = [
-    //    {
-    //        id: 1,
-    //        name: 'India'
-    //    },
-    //    {
-    //        id: 2,
-    //        name: 'United States'
-    //    },
-    //    {
-    //        id: 3,
-    //        name: 'United Kindom'
-    //    }];
+    var countriesPromise = filtersFactory.GetCountries();
 
-    $http({
-        method: 'GET',
-        url: '/api/person/countries'
-    }).then(function successCB(data) {
-        console.log('countrie');
-        console.log(data.data);
-        $scope.Countries = data.data;
-    }, function errorCB(data) {
-        console.log('error');
-        console.log(data);
+    countriesPromise.then(function (data) {
+        $rootScope.RCountries = $scope.Countries = data;
     });
 
-    $('#countries').select2({
-        placeholder: 'Select Country'
+    var statesPromise = filtersFactory.GetStates();
+
+    statesPromise.then(function (data) {
+        $rootScope.RStates = $scope.States = data;
     });
 
-    //$scope.Zones = [
-    //    {
-    //        id: 1,
-    //        name: 'India zone'
-    //    },
-    //    {
-    //        id: 2,
-    //        name: 'America zone'
-    //    }];
+    var citiesPromise = filtersFactory.GetCities();
 
-    $('#zones').select2({
-        placeholder: 'Select Zone'
+    citiesPromise.then(function (data) {
+        $rootScope.RCities = $scope.Cities = data;
     });
 
-    //$scope.States = [
-    //    {
-    //        id: 1,
-    //        name: 'Tamilnadu'
-    //    },
-    //    {
-    //        id: 2,
-    //        name: 'Kerala'
-    //    }];
-
-    $http({
-        method: 'GET',
-        url: '/api/person/states'
-    }).then(function successCB(data) {
-        console.log('states');
-        console.log(data.data);
-        $scope.States = data.data;
-    }, function errorCB(data) {
-        console.log('error');
-        console.log(data);
-        });
-
-    //$scope.Cities = [
-    //    {
-    //        id: 1,
-    //        name: 'Madurai'
-    //    },
-    //    {
-    //        id: 2,
-    //        name: 'Chennai'
-    //    }];
-
-    $http({
-        method: 'GET',
-        url: '/api/person/cities'
-    }).then(function successCB(data) {
-        console.log('cities');
-        console.log(data.data);
-        $scope.Cities = data.data;
-    }, function errorCB(data) {
-        console.log('error');
-        console.log(data);
-    });
-
-    $('#cities').select2({
-        placeholder: 'Select City'
-    });
-
-    $('#states').select2({
-        placeholder: 'Select State'
-    });
+    SetPlaceHolders();
 
     $scope.OnTimeZoneChange = function () {
-        console.log('selected zone');
-        console.log($scope.SelectedZone);
-        var countries = $scope.Countries;
-        $scope.Countries = countries.filter(function (co) {
+        $scope.Countries = [];
+
+        $scope.Countries = $rootScope.RCountries.filter(function (co) {
             return co.TimeZone == $scope.SelectedZone;
         });
-
-        console.log($scope.Countries);
     }
 
     $scope.OnCountryChange = function () {
-        console.log('selected country');
-        console.log($scope.SelectedCountry);
-        var states = $scope.States;
-        $scope.States = states.filter(function (st) {
+        $scope.States = [];
+
+        $scope.States = $rootScope.RStates.filter(function (st) {
             return st.Country == $scope.SelectedCountry;
         });
-
-        console.log($scope.States);
     }
 
     $scope.OnStateChange = function () {
-        console.log('selected state');
-        console.log($scope.SelectedState);
-        var cities = $scope.Cities;
-        $scope.Cities = cities.filter(function (ci) {
+        $scope.Cities = [];
+
+        $scope.Cities = $rootScope.RCities.filter(function (ci) {
             return ci.State == $scope.SelectedState;
         });
-
-        console.log($scope.Cities);
     }
 
     $scope.OnSearch = function () {
@@ -148,18 +57,17 @@
         console.log($scope.SelectedCity);
 
         $http({
-            method: 'GET',
+            method: 'POST',
             url: '/api/person/details',
+            dataType: 'json',
             data: {
-                timeZone: $scope.SelectedZone,
-                country: $scope.SelectedCountry,
-                state: $scope.SelectedState,
-                city: $scope.SelectedCity
+                "TimeZone": $scope.SelectedZone,
+                "Country": $scope.SelectedCountry,
+                "State": $scope.SelectedState,
+                "City": $scope.SelectedCity
             }
         }).then(function successCB(data) {
-            console.log('persons');
-            console.log(data.data);
-            $scope.Cities = data.data;
+            $rootScope.$broadcast("ShowPersonDetails", data.data);
         }, function errorCB(data) {
             console.log('error');
             console.log(data);
@@ -167,9 +75,29 @@
     }
 
     $scope.OnReset = function () {
-        $scope.SelectedZone = '';
-        $scope.SelectedCountry = '';
-        $scope.SelectedState = '';
-        $scope.SelectedCity = '';
+        SetPlaceHolders();
+
+        $scope.SelectedZone = $rootScope.RZones;
+        $scope.SelectedCountry = $rootScope.RCountries;
+        $scope.SelectedState = $rootScope.RStates;
+        $scope.SelectedCity = $rootScope.RCities;
+    }
+
+    function SetPlaceHolders() {
+        $('#countries').select2({
+            placeholder: 'Select Country'
+        });
+
+        $('#zones').select2({
+            placeholder: 'Select Zone'
+        });
+
+        $('#cities').select2({
+            placeholder: 'Select City'
+        });
+
+        $('#states').select2({
+            placeholder: 'Select State'
+        });
     }
 });
