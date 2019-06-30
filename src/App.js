@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { PostMessage } from './components/common';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             defaultMessage="Learn React"
             description="Link on react page"></FormattedMessage>
         </a>
+        <PostMessage json={{ id: 'app.text', defaultMessage: 'test from App', values: { what: 'react-intl test'} }}></PostMessage>
       </header>
     </div>
   );
