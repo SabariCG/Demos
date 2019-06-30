@@ -21,8 +21,9 @@ function App() {
             defaultMessage="Learn React"
             description="Link on react page"></FormattedMessage>
         </a>
-        <PostMessage json={{ id: 'app.text', values: { what: 'react-intl test' } }}></PostMessage>
-        <PostMessage json={{ id: 'app.test', values: { what: 'react-intl test', test: 'post test' } }}></PostMessage>
+        <PostMessage json={{ id: 'app.text', message: 'app text message', values: { what: 'react-intl test' } }}></PostMessage>
+        <PostMessage json={{ id: 'app.test', message: 'app test message', values: { what: 'react-intl test', test: 'post test' } }}></PostMessage>
+        <PostMessage json={{ id: 'app.empty', message: 'app empty message' }}></PostMessage>
       </header>
     </div>
   );
