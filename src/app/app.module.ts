@@ -9,11 +9,11 @@ import { MenuRoutingModule } from './menu-routing/menu-routing.module';
 
 const appRoutes:Routes = [
     { path: '', component: DefaultComponent },
-    { path: 'home', loadChildren: './menu/menu-routing.module#AppModule' },
-    { path: 'projects', loadChildren: './menu/menu-routing.module#AppModule' },
-    { path: 'services', loadChildren: './menu/menu-routing.module#AppModule' },
-    { path: 'contact', loadChildren: './menu/menu-routing.module#AppModule' },
-    { path: 'about', loadChildren: './menu/menu-routing.module#AppModule' }
+    { path: 'home', loadChildren: './menu-routing.module#AppModule' },
+    { path: 'projects', loadChildren: './menu-routing.module#AppModule' },
+    { path: 'services', loadChildren: './menu-routing.module#AppModule' },
+    { path: 'contact', loadChildren: './menu-routing.module#AppModule' },
+    { path: 'about', loadChildren: './menu-routing.module#AppModule' }
 ]
 
 @NgModule({
