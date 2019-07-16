@@ -4,32 +4,27 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MyCustomModuleModule } from './my-custom-module/my-custom-module.module';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ServicesComponent } from './services/services.component';
-import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './about/about.component';
+import { DefaultComponent } from './default/default.component';
+import { MenuRoutingModule } from './menu-routing/menu-routing.module';
 
 const appRoutes:Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'about', component: AboutComponent }
+    { path: '', component: DefaultComponent },
+    { path: 'home', loadChildren: './menu/menu-routing.module#AppModule' },
+    { path: 'projects', loadChildren: './menu/menu-routing.module#AppModule' },
+    { path: 'services', loadChildren: './menu/menu-routing.module#AppModule' },
+    { path: 'contact', loadChildren: './menu/menu-routing.module#AppModule' },
+    { path: 'about', loadChildren: './menu/menu-routing.module#AppModule' }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ProjectsComponent,
-    ServicesComponent,
-    ContactComponent,
-    AboutComponent
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
     MyCustomModuleModule,
+    MenuRoutingModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
   providers: [],
